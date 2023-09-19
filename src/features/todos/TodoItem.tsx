@@ -1,7 +1,7 @@
 import { Todo } from './Todo';
-import React from 'react';
+import React, { useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
-import { updateTodo } from './todosSlice';
+import { removeTodo, updateTodo } from './todosSlice';
 
 type TodoItemProps = {
   todo: Todo;
@@ -9,6 +9,7 @@ type TodoItemProps = {
 
 const TodoItem = ({ todo }: TodoItemProps) => {
   const dispatch = useAppDispatch();
+  const [editMode, setEditMode] = useState(false);
 
   const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const updatedTodo = {
@@ -16,6 +17,10 @@ const TodoItem = ({ todo }: TodoItemProps) => {
       completed: e.target.checked,
     };
     dispatch(updateTodo(updatedTodo));
+  };
+
+  const handleDelete = () => {
+    dispatch(removeTodo(todo.id));
   };
 
   return (
@@ -26,10 +31,15 @@ const TodoItem = ({ todo }: TodoItemProps) => {
           checked={todo.completed}
           onChange={handleCheckboxClick}
         />
-        <span>{todo.title}</span>
+        <span className="todo-title">{todo.title}</span>
       </label>
       <button className="btn btn-sm btn-outline-secondary ms-auto">Edit</button>
-      <button className="btn btn-sm btn-outline-danger ms-2">Delete</button>
+      <button
+        className="btn btn-sm btn-outline-danger ms-2"
+        onClick={handleDelete}
+      >
+        Delete
+      </button>
     </div>
   );
 };

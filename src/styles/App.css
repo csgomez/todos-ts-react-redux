@@ -11,6 +11,11 @@
   cursor: pointer;
 }
 
+/* strikes though completed todos */
+input[type='checkbox']:checked + .todo-title {
+  text-decoration: line-through;
+}
+
 @media (max-width: 720px) {
   .App {
     width: 100%;
