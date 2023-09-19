@@ -40,9 +40,9 @@ const FilterStatusInput = () => {
   };
 
   return (
-    <div>
+    <div className="status-filter">
       <label>
-        All
+        <small>All</small>
         <input
           type="radio"
           name="todoStatusFilter"
@@ -52,7 +52,7 @@ const FilterStatusInput = () => {
         />
       </label>
       <label>
-        Completed
+        <small>Completed</small>
         <input
           type="radio"
           name="todoStatusFilter"
@@ -62,7 +62,7 @@ const FilterStatusInput = () => {
         />
       </label>
       <label>
-        Incomplete
+        <small>Incomplete</small>
         <input
           type="radio"
           name="todoStatusFilter"

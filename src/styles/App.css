@@ -28,6 +28,21 @@ input[type='checkbox']:checked + .todo-title {
   opacity: 100%;
 }
 
+.status-filter {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.5rem;
+}
+
+.status-filter > label {
+  display: flex;
+  flex-direction: row;
+}
+
+.status-filter > label > input {
+  margin: 0 0.25rem;
+}
+
 @media (max-width: 720px) {
   .App {
     width: 100%;
