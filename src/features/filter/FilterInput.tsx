@@ -7,17 +7,18 @@ const FilterInput = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="d-flex align-items-center">
-      <label htmlFor="searchFilterInput" className="me-3">
-        Search
-      </label>
+    <div className="d-flex align-items-center mb-3">
       <input
         id="searchFilterInput"
         type="text"
         value={searchFilter}
         onChange={(e) => dispatch(setSearchFilter(e.target.value))}
-        className="form-control"
+        className="form-control form-control-sm"
+        placeholder="Search Todos"
       />
+      {/* <label htmlFor="searchFilterInput" className="me-3">
+        Search
+      </label> */}
     </div>
   );
 };
