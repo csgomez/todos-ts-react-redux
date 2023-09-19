@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import {
-  _selectStatusFilter,
+  selectStatusFilter,
   selectSearchFilter,
   setSearchFilter,
   setStatusFilter,
@@ -30,7 +30,7 @@ const FilterInput = () => {
 
 const FilterStatusInput = () => {
   const dispatch = useAppDispatch();
-  const statusFilter = useSelector(_selectStatusFilter);
+  const statusFilter = useSelector(selectStatusFilter);
 
   const handleStatusFilterChange = (
     e: React.SyntheticEvent<HTMLInputElement>

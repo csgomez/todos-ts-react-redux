@@ -24,11 +24,12 @@ export const { setSearchFilter, setStatusFilter } = filterSlice.actions;
 
 export default filterSlice.reducer;
 
-export const selectSearchFilter = (state: RootState) => state.filter.search;
-export const _selectStatusFilter = (state: RootState) => state.filter.status;
+export const selectSearchFilter = createSelector(
+  (state: RootState) => state.filter.search,
+  (searchFilter) => searchFilter
+);
+
 export const selectStatusFilter = createSelector(
-  (state: RootState) => state.filter,
-  (filter) => {
-    return filter.status;
-  }
+  (state: RootState) => state.filter.status,
+  (statusFilter) => statusFilter
 );
