@@ -16,7 +16,6 @@ const FilterInput = () => {
         type="text"
         value={searchFilter}
         onChange={(e) => dispatch(setSearchFilter(e.target.value))}
-        placeholder="study"
         className="form-control"
       />
     </div>
