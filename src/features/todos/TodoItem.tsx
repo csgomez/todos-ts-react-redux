@@ -1,5 +1,5 @@
 import { Todo } from './Todo';
-import React, { useState } from 'react';
+import React from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { removeTodo, updateTodo } from './todosSlice';
 
@@ -9,7 +9,6 @@ type TodoItemProps = {
 
 const TodoItem = ({ todo }: TodoItemProps) => {
   const dispatch = useAppDispatch();
-  const [editMode, setEditMode] = useState(false);
 
   const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const updatedTodo = {
