@@ -65,20 +65,7 @@ const todosSlice = createSlice({
 export const { setTodos, addTodo, removeTodo, updateTodo } = todosSlice.actions;
 export default todosSlice.reducer;
 
-export const selectAllTodos = (state: RootState) => state.todos;
-export const selectFilteredTodos = (state: RootState) => {
-  const todos = state.todos;
-  const searchFilter = state.filter.search;
-  // const statusFilter = state.filter.status;
-
-  // filter using search text, ignoring case
-  const searchFilteredTodos = todos.filter((todo) =>
-    todo.title.toLowerCase().includes(searchFilter.toLowerCase())
-  );
-
-  return searchFilteredTodos;
-};
-export const _selectFilteredTodos = createSelector(
+export const selectFilteredTodos = createSelector(
   (state: RootState) => state.todos,
   (state: RootState) => state.filter.search,
   (state: RootState) => state.filter.status,

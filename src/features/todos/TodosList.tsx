@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { _selectFilteredTodos } from './todosSlice';
+import { selectFilteredTodos } from './todosSlice';
 import TodoItem from './TodoItem';
 
 const TodosList = () => {
-  const allTodos = useSelector(_selectFilteredTodos);
+  const allTodos = useSelector(selectFilteredTodos);
 
   if (allTodos.length === 0) return <p>No Todos....</p>;
 
