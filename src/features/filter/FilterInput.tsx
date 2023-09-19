@@ -1,6 +1,13 @@
 import { useSelector } from 'react-redux';
-import { selectSearchFilter, setSearchFilter } from './filterSlice';
+import {
+  _selectStatusFilter,
+  selectSearchFilter,
+  setSearchFilter,
+  setStatusFilter,
+} from './filterSlice';
 import { useAppDispatch } from '../../app/hooks';
+import React from 'react';
+import { FilterStatusState } from './Filter';
 
 const FilterInput = () => {
   const searchFilter = useSelector(selectSearchFilter);
@@ -16,9 +23,54 @@ const FilterInput = () => {
         className="form-control form-control-sm"
         placeholder="Search Todos"
       />
-      {/* <label htmlFor="searchFilterInput" className="me-3">
-        Search
-      </label> */}
+      <FilterStatusInput />
+    </div>
+  );
+};
+
+const FilterStatusInput = () => {
+  const dispatch = useAppDispatch();
+  const statusFilter = useSelector(_selectStatusFilter);
+
+  const handleStatusFilterChange = (
+    e: React.SyntheticEvent<HTMLInputElement>
+  ) => {
+    const value = e.currentTarget.value as FilterStatusState;
+    dispatch(setStatusFilter(value));
+  };
+
+  return (
+    <div>
+      <label>
+        All
+        <input
+          type="radio"
+          name="todoStatusFilter"
+          value="all"
+          checked={statusFilter === 'all'}
+          onChange={handleStatusFilterChange}
+        />
+      </label>
+      <label>
+        Completed
+        <input
+          type="radio"
+          name="todoStatusFilter"
+          value="completed"
+          checked={statusFilter === 'completed'}
+          onChange={handleStatusFilterChange}
+        />
+      </label>
+      <label>
+        Incomplete
+        <input
+          type="radio"
+          name="todoStatusFilter"
+          value="incomplete"
+          checked={statusFilter === 'incomplete'}
+          onChange={handleStatusFilterChange}
+        />
+      </label>
     </div>
   );
 };

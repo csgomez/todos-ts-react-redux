@@ -81,11 +81,19 @@ export const selectFilteredTodos = (state: RootState) => {
 export const _selectFilteredTodos = createSelector(
   (state: RootState) => state.todos,
   (state: RootState) => state.filter.search,
-  (todos, searchFilter) => {
+  (state: RootState) => state.filter.status,
+  (todos, searchFilter, statusFilter) => {
     const searchFilteredTodos = todos.filter((todo) =>
       todo.title.toLowerCase().includes(searchFilter.toLowerCase())
     );
 
-    return searchFilteredTodos;
+    switch (statusFilter) {
+      case 'all':
+        return searchFilteredTodos;
+      case 'completed':
+        return searchFilteredTodos.filter((todo) => todo.completed);
+      case 'incomplete':
+        return searchFilteredTodos.filter((todo) => !todo.completed);
+    }
   }
 );

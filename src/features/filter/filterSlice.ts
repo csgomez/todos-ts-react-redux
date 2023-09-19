@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
 import { FilterState, FilterStatusState } from './Filter';
 import { RootState } from '../../app/store';
 
@@ -25,3 +25,10 @@ export const { setSearchFilter, setStatusFilter } = filterSlice.actions;
 export default filterSlice.reducer;
 
 export const selectSearchFilter = (state: RootState) => state.filter.search;
+export const _selectStatusFilter = (state: RootState) => state.filter.status;
+export const selectStatusFilter = createSelector(
+  (state: RootState) => state.filter,
+  (filter) => {
+    return filter.status;
+  }
+);
