@@ -16,9 +16,22 @@ input[type='checkbox']:checked + .todo-title {
   text-decoration: line-through;
 }
 
+#formTitle::placeholder {
+  opacity: 50%;
+}
+
+.list-group-item > .opacity-on-hover {
+  opacity: 0%;
+}
+
+.list-group-item:hover > .opacity-on-hover {
+  opacity: 100%;
+}
+
 @media (max-width: 720px) {
   .App {
     width: 100%;
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

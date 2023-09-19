@@ -17,21 +17,23 @@ const AddTodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="d-flex flex-row">
+    <form onSubmit={handleSubmit} className="d-flex align-items-center">
       <div className="d-flex align-items-center flex-grow-1">
-        <label htmlFor="formTitle" className="me-3">
+        {/* <label htmlFor="formTitle" className="me-3">
           New Todo
-        </label>
+        </label> */}
         <input
           id="formTitle"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="me-1 flex-grow-1"
+          className="form-control me-2 lh-lg flex-grow-1"
+          placeholder="Take out garbage"
+          autoComplete="off"
         />
       </div>
-      <button type="submit" className="btn btn-primary btn-sm">
-        Add
+      <button type="submit" className="btn btn-primary">
+        Add New Todo
       </button>
     </form>
   );

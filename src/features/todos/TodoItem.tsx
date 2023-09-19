@@ -24,8 +24,8 @@ const TodoItem = ({ todo }: TodoItemProps) => {
   };
 
   return (
-    <div className="list-group-item d-flex align-items-center rounded-3 py-3">
-      <label className="d-flex gap-3 cursor-pointer">
+    <div className="list-group-item list-group-item-action d-flex align-items-center border rounded-2 py-3 shadow-sm">
+      <label className="d-flex gap-3 cursor-pointer flex-grow-1">
         <input
           type="checkbox"
           checked={todo.completed}
@@ -33,13 +33,15 @@ const TodoItem = ({ todo }: TodoItemProps) => {
         />
         <span className="todo-title">{todo.title}</span>
       </label>
-      <button className="btn btn-sm btn-outline-secondary ms-auto">Edit</button>
-      <button
-        className="btn btn-sm btn-outline-danger ms-2"
-        onClick={handleDelete}
-      >
-        Delete
-      </button>
+      <div className="opacity-on-hover ms-auto">
+        <button className="btn btn-sm btn-outline-secondary">Edit</button>
+        <button
+          className="btn btn-sm btn-outline-danger ms-2"
+          onClick={handleDelete}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 };
