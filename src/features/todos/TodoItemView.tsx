@@ -28,6 +28,7 @@ const TodoItemView = ({ todo, onEditEnable }: TodoItemViewProps) => {
       <label className="d-flex gap-3 cursor-pointer flex-grow-1">
         <input
           type="checkbox"
+          name={`isTodoCompleted-${todo.id}`}
           checked={todo.completed}
           onChange={handleCheckboxClick}
         />
