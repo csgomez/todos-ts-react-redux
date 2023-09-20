@@ -31,7 +31,6 @@ input[type='checkbox']:checked + .todo-title {
 .status-filter {
   display: flex;
   flex-direction: row;
-  margin-left: 0.5rem;
 }
 
 .status-filter > label {
