@@ -7,11 +7,15 @@ const AddTodoForm = () => {
   const titleInputRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
 
-  // Focus on adding new todos when page is loaded
-  useEffect(() => {
+  const focusOnTitleInput = () => {
     if (titleInputRef.current) {
       titleInputRef.current.focus();
     }
+  };
+
+  // Focus on adding new todos when page is loaded
+  useEffect(() => {
+    focusOnTitleInput();
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,6 +26,7 @@ const AddTodoForm = () => {
     dispatch(addTodo({ title }));
 
     setTitle('');
+    focusOnTitleInput();
   };
 
   return (
