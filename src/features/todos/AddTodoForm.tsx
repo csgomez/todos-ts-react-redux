@@ -19,9 +19,6 @@ const AddTodoForm = () => {
   return (
     <form onSubmit={handleSubmit} className="d-flex align-items-center">
       <div className="d-flex align-items-center flex-grow-1">
-        {/* <label htmlFor="formTitle" className="me-3">
-          New Todo
-        </label> */}
         <input
           id="formTitle"
           type="text"
