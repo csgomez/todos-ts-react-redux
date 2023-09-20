@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { addTodo } from './todosSlice';
 import { useAppDispatch } from '../../app/hooks';
 
 const AddTodoForm = () => {
   const [title, setTitle] = useState<string>('');
+  const titleInputRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
+
+  // Focus on adding new todos when page is loaded
+  useEffect(() => {
+    if (titleInputRef.current) {
+      titleInputRef.current.focus();
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,6 +35,7 @@ const AddTodoForm = () => {
           className="form-control me-2 lh-lg flex-grow-1"
           placeholder="Take out garbage"
           autoComplete="off"
+          ref={titleInputRef}
         />
       </div>
       <button type="submit" className="btn btn-primary">
