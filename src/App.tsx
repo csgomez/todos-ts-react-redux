@@ -1,4 +1,3 @@
-import { Toaster } from 'react-hot-toast';
 import './styles/App.css';
 import AddTodoForm from './features/todos/AddTodoForm';
 import TodosList from './features/todos/TodosList';
@@ -13,7 +12,6 @@ function App() {
       <div className="bg-light py-4 shadow rounded-3 px-4 mt-3">
         <FilterInput />
         <TodosList />
-        <Toaster />
       </div>
     </main>
   );
