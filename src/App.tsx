@@ -7,7 +7,7 @@ import FilterInput from './features/filter/FilterInput';
 function App() {
   return (
     <main className="App">
-      <h2 className="text-center mt-4 mb-3">Todos</h2>
+      <h2 className="text-center fw-bold text-primary mt-4 mb-3">Todos</h2>
       <AddTodoForm />
       <div className="bg-light py-4 shadow rounded-3 px-4 mt-3">
         <FilterInput />

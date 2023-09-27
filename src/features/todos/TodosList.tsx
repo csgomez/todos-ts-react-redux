@@ -12,7 +12,11 @@ const TodosList = () => {
     const messageModifier =
       currentStatusFilter === 'all' ? '' : currentStatusFilter;
 
-    return <p>No {messageModifier} Todos....</p>;
+    return (
+      <p className="text-secondary-emphasis mt-4 mb-2">
+        No {messageModifier} Todos....
+      </p>
+    );
   }
 
   return (
