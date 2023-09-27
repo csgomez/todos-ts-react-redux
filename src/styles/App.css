@@ -20,14 +20,6 @@ input[type='checkbox']:checked + .todo-title {
   opacity: 60%;
 }
 
-.list-group-item > .opacity-on-hover {
-  opacity: 0%;
-}
-
-.list-group-item:hover > .opacity-on-hover {
-  opacity: 100%;
-}
-
 .status-filter {
   display: flex;
   flex-direction: row;
