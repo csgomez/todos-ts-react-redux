@@ -7,6 +7,7 @@ export interface Todo {
   dateLastModified: string;
 }
 
+// only the 'title' property is retained
 export type TodoDraft = Omit<
   Todo,
   'id' | 'completed' | 'dateCreated' | 'dateCompleted' | 'dateLastModified'
