@@ -9,7 +9,7 @@ const FilterSearchInput = () => {
   return (
     <input
       id="searchFilterInput"
-      type="text"
+      type="search"
       value={searchFilter}
       onChange={(e) => dispatch(setSearchFilter(e.target.value))}
       className="form-control form-control-sm"
