@@ -34,7 +34,7 @@ const TodoItemView = ({ todo, onEditEnable }: TodoItemViewProps) => {
         />
         <span className="todo-title">{todo.title}</span>
       </label>
-      <div className="opacity-on-hover ms-auto">
+      <div className="opacity-on-hover d-flex">
         <button
           className="btn btn-sm btn-outline-secondary"
           onClick={onEditEnable}
