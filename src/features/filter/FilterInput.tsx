@@ -3,7 +3,7 @@ import FilterSearchInput from './FilterSearchInput';
 
 const FilterInput = () => {
   return (
-    <div className="d-sm-flex align-items-center gap-3 mb-3">
+    <div className="d-flex flex-column flex-sm-row align-items-sm-center gap-2 gap mb-3">
       <FilterSearchInput />
       <FilterStatusInput />
     </div>

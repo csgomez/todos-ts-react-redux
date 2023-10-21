@@ -30,7 +30,10 @@ const AddTodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="d-flex align-items-center">
+    <form
+      onSubmit={handleSubmit}
+      className="d-flex align-items-center mx-2 mx-md-0"
+    >
       <div className="d-flex align-items-center flex-grow-1">
         <input
           id="formTitle"
