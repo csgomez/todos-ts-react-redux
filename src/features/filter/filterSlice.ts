@@ -1,6 +1,12 @@
 import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
-import { FilterState, FilterStatusState } from './Filter';
 import { RootState } from '../../app/store';
+
+export type FilterStatusState = 'all' | 'completed' | 'incomplete';
+
+export interface FilterState {
+  search: string;
+  status: FilterStatusState;
+}
 
 const initialState: FilterState = {
   search: '',

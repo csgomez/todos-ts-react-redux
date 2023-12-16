@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Todo } from './Todo';
+import { Todo } from './todosSlice';
 import { useAppDispatch } from '../../app/hooks';
 import { updateTodo } from './todosSlice';
 

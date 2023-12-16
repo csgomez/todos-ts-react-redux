@@ -1,5 +1,5 @@
 import todosReducer, { addTodo, removeTodo, updateTodo } from './todosSlice';
-import { Todo, TodoDraft } from './Todo';
+import { Todo, TodoDraft } from './todosSlice';
 import { nanoid } from '@reduxjs/toolkit';
 
 const createTodo = (title: string, completed = false): Todo => {

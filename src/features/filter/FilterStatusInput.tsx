@@ -1,7 +1,10 @@
 import { useSelector } from 'react-redux';
-import { selectStatusFilter, setStatusFilter } from './filterSlice';
+import {
+  FilterStatusState,
+  selectStatusFilter,
+  setStatusFilter,
+} from './filterSlice';
 import { useAppDispatch } from '../../app/hooks';
-import { FilterStatusState } from './Filter';
 
 const FilterStatusInput = () => {
   const dispatch = useAppDispatch();

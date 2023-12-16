@@ -6,13 +6,27 @@ import {
   nanoid,
 } from '@reduxjs/toolkit';
 import { TODOS_LOCALSTORAGE_KEY } from '../../config';
-import { Todo, TodoDraft } from './Todo';
 import { RootState } from '../../app/store';
 
 // const todosAdapter = createEntityAdapter<Todo>({
 //   // sort the Todos by dateCreated by default
 //   sortComparer: (a, b) => b.dateCreated.getTime() - a.dateCreated.getTime(),
 // });
+
+export interface Todo {
+  id: string;
+  title: string;
+  completed: boolean;
+  dateCreated: string;
+  dateCompleted: string | null;
+  dateLastModified: string;
+}
+
+// only the 'title' property is retained
+export type TodoDraft = Omit<
+  Todo,
+  'id' | 'completed' | 'dateCreated' | 'dateCompleted' | 'dateLastModified'
+>;
 
 const getStoredTodos = () => {
   const storedTodos = localStorage.getItem(TODOS_LOCALSTORAGE_KEY) || '[]';

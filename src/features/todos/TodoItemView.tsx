@@ -1,4 +1,4 @@
-import { Todo } from './Todo';
+import { Todo } from './todosSlice';
 import React from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { removeTodo, updateTodo } from './todosSlice';
