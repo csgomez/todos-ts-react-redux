@@ -1,17 +1,12 @@
 import {
   PayloadAction,
   createSelector,
-  // createEntityAdapter,
   createSlice,
   nanoid,
 } from '@reduxjs/toolkit';
 import { TODOS_LOCALSTORAGE_KEY } from '../../config';
 import { RootState } from '../../app/store';
-
-// const todosAdapter = createEntityAdapter<Todo>({
-//   // sort the Todos by dateCreated by default
-//   sortComparer: (a, b) => b.dateCreated.getTime() - a.dateCreated.getTime(),
-// });
+import { sampleTodos } from './utils';
 
 export interface Todo {
   id: string;
@@ -29,15 +24,20 @@ export type TodoDraft = Omit<
 >;
 
 const getStoredTodos = () => {
-  const storedTodos = localStorage.getItem(TODOS_LOCALSTORAGE_KEY) || '[]';
-  const parsedTodos = JSON.parse(storedTodos) as Todo[];
+  const storedTodos = localStorage.getItem(TODOS_LOCALSTORAGE_KEY);
+
+  // if the todo's key doesn't exist => users first visit => load sample todos
+  const parsedTodos =
+    storedTodos === null ? sampleTodos : (JSON.parse(storedTodos) as Todo[]);
 
   return parsedTodos;
 };
 
+const initialState = getStoredTodos();
+
 const todosSlice = createSlice({
   name: 'todos',
-  initialState: getStoredTodos(),
+  initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<TodoDraft>) => {
       const { title } = action.payload;
