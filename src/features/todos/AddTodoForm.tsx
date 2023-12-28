@@ -32,7 +32,7 @@ const AddTodoForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="d-flex align-items-center mx-2 mx-md-0"
+      className="d-flex flex-column flex-sm-row align-items-sm-center mx-2 mx-md-0 gap-2 gap-sm-0"
     >
       <div className="d-flex align-items-center flex-grow-1">
         <input
