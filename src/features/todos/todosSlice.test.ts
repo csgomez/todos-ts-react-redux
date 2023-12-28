@@ -1,6 +1,7 @@
 import todosReducer, { addTodo, removeTodo, updateTodo } from './todosSlice';
 import { Todo, TodoDraft } from './todosSlice';
 import { nanoid } from '@reduxjs/toolkit';
+import { sampleTodos } from './utils';
 
 const createTodo = (title: string, completed = false): Todo => {
   const now = new Date().toISOString();
@@ -21,8 +22,8 @@ const createTodoDraft = (title: string): TodoDraft => {
 };
 
 describe('todosSlice', () => {
-  it('should handle initial state', () => {
-    expect(todosReducer(undefined, { type: 'unknown' })).toEqual([]);
+  it('should load sample todos on first visit', () => {
+    expect(todosReducer(undefined, { type: 'unknown' })).toEqual(sampleTodos);
   });
 
   it('should handle adding todos', () => {

@@ -1,4 +1,3 @@
-import { nanoid } from '@reduxjs/toolkit';
 import { Todo } from './todosSlice';
 
 const nowDate = new Date();
@@ -16,7 +15,7 @@ export const sampleTodos: Todo[] = [
     dateCreated: now,
     dateCompleted: null,
     dateLastModified: now,
-    id: nanoid(),
+    id: '1',
   },
   {
     title: 'Buy fresh vegetables and fruits from the local market',
@@ -24,7 +23,7 @@ export const sampleTodos: Todo[] = [
     dateCreated: before,
     dateCompleted: now,
     dateLastModified: now,
-    id: nanoid(),
+    id: '2',
   },
   {
     title: 'Take out the garbage',
@@ -32,7 +31,7 @@ export const sampleTodos: Todo[] = [
     dateCreated: now,
     dateCompleted: null,
     dateLastModified: now,
-    id: nanoid(),
+    id: '3',
   },
   {
     title: "Replace the Fluke 87's battery",
@@ -40,7 +39,7 @@ export const sampleTodos: Todo[] = [
     dateCreated: now,
     dateCompleted: null,
     dateLastModified: now,
-    id: nanoid(),
+    id: '4',
   },
   {
     title: "Update the toaster's firmware",
@@ -48,6 +47,6 @@ export const sampleTodos: Todo[] = [
     dateCreated: before,
     dateCompleted: now,
     dateLastModified: now,
-    id: nanoid(),
+    id: '5',
   },
 ];
