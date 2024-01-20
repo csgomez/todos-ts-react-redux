@@ -2,7 +2,6 @@ import AddTodoForm from './features/todos/AddTodoForm';
 import TodosList from './features/todos/TodosList';
 import FilterInput from './features/filter/FilterInput';
 import Footer from './components/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
 function App() {
