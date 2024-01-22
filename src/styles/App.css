@@ -3,16 +3,16 @@
   flex: 1;
 }
 
-.cursor-pointer {
+.cursorPointer {
   cursor: pointer;
 }
 
-.cursor-pointer > input[type='checkbox'] {
+.cursorPointer > input[type='checkbox'] {
   cursor: pointer;
 }
 
 /* strikes though completed todos */
-input[type='checkbox']:checked + .todo-title {
+input[type='checkbox']:checked + .todoTitle {
   text-decoration: line-through;
 }
 
@@ -20,19 +20,19 @@ input[type='checkbox']:checked + .todo-title {
   opacity: 60%;
 }
 
-.status-filter {
+.statusFilter {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
 
-.status-filter > label {
+.statusFilter > label {
   display: flex;
   flex-direction: row;
   cursor: pointer;
 }
 
-.status-filter > label > input {
+.statusFilter > label > input {
   margin: 0 0.25rem;
 }
 

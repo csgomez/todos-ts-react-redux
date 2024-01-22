@@ -18,7 +18,7 @@ const FilterStatusInput = () => {
   };
 
   return (
-    <div className="status-filter">
+    <div className="statusFilter">
       <label>
         <small>All</small>
         <input

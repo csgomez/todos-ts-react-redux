@@ -25,14 +25,14 @@ const TodoItemView = ({ todo, onEditEnable }: TodoItemViewProps) => {
 
   return (
     <>
-      <label className="d-flex gap-3 cursor-pointer flex-grow-1">
+      <label className="d-flex gap-3 cursorPointer flex-grow-1">
         <input
           type="checkbox"
           name={`isTodoCompleted-${todo.id}`}
           checked={todo.completed}
           onChange={handleCheckboxClick}
         />
-        <span className="todo-title">{todo.title}</span>
+        <span className="todoTitle">{todo.title}</span>
       </label>
       <div className="opacity-on-hover d-flex">
         <button
