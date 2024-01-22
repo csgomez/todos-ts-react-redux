@@ -19,13 +19,13 @@ const TodoItem = ({ todo }: TodoItemProps) => {
   };
 
   return (
-    <div className="list-group-item list-group-item-action d-flex align-items-center border rounded-2 py-3 shadow-sm">
+    <li className="list-group-item list-group-item-action d-flex align-items-center border rounded-2 py-3 shadow-sm">
       {editMode ? (
         <TodoItemEdit todo={todo} onEditDisable={disableEditMode} />
       ) : (
         <TodoItemView todo={todo} onEditEnable={enableEditMode} />
       )}
-    </div>
+    </li>
   );
 };
 

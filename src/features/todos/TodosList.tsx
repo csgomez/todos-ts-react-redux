@@ -20,11 +20,11 @@ const TodosList = () => {
   }
 
   return (
-    <div className="list-group gap-3">
+    <ul className="list-group gap-3">
       {allTodos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
-    </div>
+    </ul>
   );
 };
 
